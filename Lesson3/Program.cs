@@ -1,7 +1,4 @@
 ﻿
-using System.Diagnostics.Metrics;
-using System.Numerics;
-
 namespace Lesson3
 {
     internal class Program
