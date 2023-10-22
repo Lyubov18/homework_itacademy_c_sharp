@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-namespace Lesson4
+﻿namespace Lesson4
 {
     internal class Program
     {
