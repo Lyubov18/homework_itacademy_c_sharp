@@ -101,15 +101,53 @@
                     {
                         max = number;
                     }
-                    else
-                    {
-                        continue;
-                    }
                 }
                 Console.Write($"Минимальный элемент в массиве: {min}{Environment.NewLine}Максимальный элемент в массиве: {max}{Environment.NewLine}{Environment.NewLine}");
             }
 
             void UniqueElementsInArray(int[] inputArray)
+            {
+                int amountOfElements = 1;
+                int amountOfDuplicates = 0;
+                Array.Sort(inputArray);
+                int tempInput = inputArray[0];
+                for (int i = 1; i < inputArray.Length; i++)
+                {
+                    if (inputArray[i] == tempInput)
+                    {
+                        amountOfElements++;
+                        if (i == inputArray.Length-1)
+                        {
+                            Console.Write($"Элемент {tempInput} повторяется {amountOfElements} раз/раза {Environment.NewLine}");
+                            amountOfDuplicates++;
+                        }
+                    }
+                    else if (amountOfElements > 1)
+                    {
+                        Console.Write($"Элемент {tempInput} повторяется {amountOfElements} раз/раза {Environment.NewLine}");
+                        tempInput = inputArray[i];
+                        amountOfElements = 1;
+                        amountOfDuplicates++;
+                    }
+                    else
+                    {
+                        tempInput = inputArray[i];
+                    }
+                }
+                if (amountOfDuplicates == 0)
+                {
+                    Console.Write($"В данном массиве нет дубликатов.{Environment.NewLine}{Environment.NewLine}");
+                }
+                else
+                {
+                    Console.WriteLine($"Количество повторяющихся элементов: {amountOfDuplicates}{Environment.NewLine}{Environment.NewLine}");
+                }
+            }
+
+
+            /*Решение без использования Sort
+             * 
+             * void UniqueElementsInArray(int[] inputArray)
             {
                 int amountOfElements;
                 int amountOfDuplicates = 0;
@@ -144,7 +182,7 @@
                 {
                     Console.WriteLine($"Количество повторяющихся элементов: {amountOfDuplicates}{Environment.NewLine}{Environment.NewLine}");
                 }
-            }
+            }*/
         }
     }
 }
