@@ -5,7 +5,7 @@
         private string _taste;
         public Soda() { _taste = string.Empty; }
         public Soda(string taste) { _taste = taste; }
-        public void WriteTaste () 
+        public void WriteTaste()
         {
             if (!string.IsNullOrEmpty(_taste))
             {
@@ -14,7 +14,7 @@
             else
             {
                 Console.WriteLine($"You have a regular soda");
-            }               
+            }
         }
     }
 }
