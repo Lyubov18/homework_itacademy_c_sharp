@@ -11,7 +11,7 @@ namespace Lesson5
                 Console.WriteLine($"Введите номер задачи:{Environment.NewLine} 1 - Сумма элементов побочной диагонали матрицы и сумма элементов под этой диагональю{Environment.NewLine}" +
                                                                             $" 2 - Все вхождения в строке, кроме первого и последнего, символы \"h\" заменить на \"H\"{Environment.NewLine}" +
                                                                             $" 3 - Шифровать строку с помощью шифра Цезаря{Environment.NewLine}" +
-                                                                            $" 3 - Дешифровать строку с помощью шифра Цезаря{Environment.NewLine}" +
+                                                                            $" 4 - Дешифровать строку с помощью шифра Цезаря{Environment.NewLine}" +
                                                                             $" 0 - Выход{Environment.NewLine}"); ;
                 if (int.TryParse(Console.ReadLine(), out n))
                 {
@@ -28,6 +28,7 @@ namespace Lesson5
                             break;
                         case 4:
                             CaesarDecryptor();
+                            break;
                         case 0:
                             break;
                         default:
@@ -135,9 +136,9 @@ namespace Lesson5
 
             void CaesarEncryptor()
             {
-                string alphabethEng = "abcdefghigklmnopqrstuvwxyz";
+                string alphabethEng = "abcdefghijklmnopqrstuvwxyz";
                 string alphabethRus = "абвгдеёжзийклмнопрстуфхцчшщьыъэюя";
-                Console.WriteLine("Введите число сдвига (ключ) для дешифрования: ");
+                Console.WriteLine("Введите число сдвига (ключ) для шифрования: ");
                 if (int.TryParse(Console.ReadLine(), out int key))
                 {
                     Console.WriteLine("Введите непустую строку для шифрования: ");
@@ -158,11 +159,12 @@ namespace Lesson5
                                     if (indexMatchEng != -1)
                                     {
                                         alphabethType = "ENG";
-
+                                        encryptedText += alphabethEng[(indexMatchEng + key) % alphabethEng.Length];
                                     }
                                     else if (indexMatchRus != -1)
                                     {
                                         alphabethType = "RUS";
+                                        encryptedText += alphabethRus[(indexMatchRus + key) % alphabethRus.Length];
                                     }
                                     else
                                     {
@@ -173,7 +175,7 @@ namespace Lesson5
                                     indexMatchEng = alphabethEng.IndexOf(char.ToLower(inputText[i]));
                                     if (indexMatchEng != -1)
                                     {
-
+                                        encryptedText += alphabethEng[(indexMatchEng + key) % alphabethEng.Length];
                                     }
                                     else
                                     {
@@ -184,16 +186,16 @@ namespace Lesson5
                                     indexMatchRus = alphabethRus.IndexOf(char.ToLower(inputText[i]));
                                     if (indexMatchRus != -1)
                                     {
-
+                                        encryptedText += alphabethRus[(indexMatchRus + key) % alphabethRus.Length];
                                     }
                                     else
                                     {
                                         encryptedText += inputText[i];
                                     }
                                     break;
-
                             }
                         }
+                        Console.WriteLine($"Зашифрованная строка: {Environment.NewLine}{encryptedText}");
                     }
                     else
                     {
@@ -208,7 +210,7 @@ namespace Lesson5
 
             void CaesarDecryptor()
             {
-                string alphabethEng = "abcdefghigklmnopqrstuvwxyz";
+                string alphabethEng = "abcdefghijklmnopqrstuvwxyz";
                 string alphabethRus = "абвгдеёжзийклмнопрстуфхцчшщьыъэюя";
                 Console.WriteLine("Введите число сдвига (ключ) для дешифрования: ");
                 if (int.TryParse(Console.ReadLine(), out int key))
@@ -217,23 +219,57 @@ namespace Lesson5
                     string inputText = Console.ReadLine();
                     if (!String.IsNullOrWhiteSpace(inputText))
                     {
-                        string alphabethType;
-                        string encryptedText = "";
+                        string alphabethType = "UNDEFINED";
+                        string decryptedText = "";
+                        int indexMatchEng;
+                        int indexMatchRus;
                         for (int i = 0; i < inputText.Length; i++)
                         {
-                            if (alphabethEng.IndexOf(inputText[i]) != -1)
+                            switch (alphabethType)
                             {
-
-                            }
-                            else if (alphabethRus.IndexOf(inputText[i]) != -1)
-                            {
-
-                            }
-                            else
-                            {
-                                encryptedText += inputText[i];
+                                case "UNDEFINED":
+                                    indexMatchEng = alphabethEng.IndexOf(char.ToLower(inputText[i]));
+                                    indexMatchRus = alphabethRus.IndexOf(char.ToLower(inputText[i]));
+                                    if (indexMatchEng != -1)
+                                    {
+                                        alphabethType = "ENG";
+                                        decryptedText += alphabethEng[(indexMatchEng - key) % alphabethEng.Length];
+                                    }
+                                    else if (indexMatchRus != -1)
+                                    {
+                                        alphabethType = "RUS";
+                                        decryptedText += alphabethRus[(indexMatchRus - key) % alphabethRus.Length];
+                                    }
+                                    else
+                                    {
+                                        decryptedText += inputText[i];
+                                    }
+                                    break;
+                                case "ENG":
+                                    indexMatchEng = alphabethEng.IndexOf(char.ToLower(inputText[i]));
+                                    if (indexMatchEng != -1)
+                                    {
+                                        decryptedText += alphabethEng[(indexMatchEng - key) % alphabethEng.Length];
+                                    }
+                                    else
+                                    {
+                                        decryptedText += inputText[i];
+                                    }
+                                    break;
+                                case "RUS":
+                                    indexMatchRus = alphabethRus.IndexOf(char.ToLower(inputText[i]));
+                                    if (indexMatchRus != -1)
+                                    {
+                                        decryptedText += alphabethRus[(indexMatchRus - key) % alphabethRus.Length];
+                                    }
+                                    else
+                                    {
+                                        decryptedText += inputText[i];
+                                    }
+                                    break;
                             }
                         }
+                        Console.WriteLine($"Зашифрованная строка: {Environment.NewLine}{decryptedText}");
                     }
                     else
                     {
