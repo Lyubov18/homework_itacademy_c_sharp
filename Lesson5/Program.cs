@@ -112,9 +112,11 @@ namespace Lesson5
                     if (inputText.Contains('h'))
                     {
                         int inputLength = inputText.Length;
+                        int firstIndexH = inputText.IndexOf('h');
+                        int lastIndexH = inputText.LastIndexOf('h');
                         if (inputLength > 2)
                         {
-                            string resultText = inputText.Substring(0, 1) + inputText.Substring(1, inputLength - 2).Replace('h', 'H') + inputText.Substring(inputLength - 1, 1);
+                            string resultText = inputText.Substring(0, firstIndexH + 1) + inputText.Substring(firstIndexH + 1, lastIndexH - firstIndexH - 1).Replace('h', 'H') + inputText.Substring(lastIndexH, inputLength - lastIndexH);
                             Console.WriteLine($"Форматированная строка: {resultText}{Environment.NewLine}");
                         }
                         else
