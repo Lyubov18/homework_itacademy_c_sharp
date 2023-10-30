@@ -84,7 +84,6 @@ namespace Lesson5
                         continue;
                     }
                 }
-
             }
 
             void SumOfSideDiagonal(int[][] inputMatrix)
@@ -282,6 +281,5 @@ namespace Lesson5
                 }
             }
         }
-
     }
 }
