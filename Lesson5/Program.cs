@@ -146,7 +146,7 @@ namespace Lesson5
                     if (!String.IsNullOrWhiteSpace(inputText))
                     {
                         string alphabethType = "UNDEFINED";
-                        string encryptedText = "";
+                        string encryptedText = string.Empty;
                         int indexMatchEng;
                         int indexMatchRus;
                         for (int i = 0; i < inputText.Length; i++)
@@ -220,7 +220,7 @@ namespace Lesson5
                     if (!String.IsNullOrWhiteSpace(inputText))
                     {
                         string alphabethType = "UNDEFINED";
-                        string decryptedText = "";
+                        string decryptedText = string.Empty;
                         int indexMatchEng;
                         int indexMatchRus;
                         for (int i = 0; i < inputText.Length; i++)
