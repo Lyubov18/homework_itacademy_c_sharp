@@ -1,5 +1,4 @@
-﻿
-namespace Lesson5
+﻿namespace Lesson5
 {
     internal class Program
     {
@@ -109,24 +108,32 @@ namespace Lesson5
                 string inputText = Console.ReadLine();
                 if (!String.IsNullOrWhiteSpace(inputText))
                 {
-                    if (inputText.Contains('h'))
+                    int inputLength = inputText.Length;
+                    if (inputLength > 2)
                     {
-                        int inputLength = inputText.Length;
-                        int firstIndexH = inputText.IndexOf('h');
-                        int lastIndexH = inputText.LastIndexOf('h');
-                        if (inputLength > 2)
+                        if (inputText.Contains('h'))
                         {
-                            string resultText = inputText.Substring(0, firstIndexH + 1) + inputText.Substring(firstIndexH + 1, lastIndexH - firstIndexH - 1).Replace('h', 'H') + inputText.Substring(lastIndexH, inputLength - lastIndexH);
+                            int firstIndexH = inputText.IndexOf('h');
+                            int lastIndexH = inputText.LastIndexOf('h');
+                            char[] inputChars = inputText.ToCharArray();
+                            for (int i = firstIndexH + 1; i < lastIndexH; i++)
+                            {
+                                if (inputChars[i] == 'h')
+                                {
+                                    inputChars[i] = 'H';
+                                }
+                            }
+                            string resultText = new string(inputChars);
                             Console.WriteLine($"Форматированная строка: {resultText}{Environment.NewLine}");
                         }
                         else
                         {
-                            Console.WriteLine($"Введенная строка останется неизменной: {inputText}{Environment.NewLine}");
+                            Console.WriteLine($"Введенная строка должна содержать символ \"h\"{Environment.NewLine}");
                         }
                     }
                     else
                     {
-                        Console.WriteLine($"Введенная строка должна содержать символ \"h\"{Environment.NewLine}");
+                        Console.WriteLine($"Введенная строка останется неизменной: {inputText}{Environment.NewLine}");
                     }
                 }
                 else
