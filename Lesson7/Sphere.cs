@@ -28,7 +28,6 @@ namespace Lesson7
             }
         }
 
-
         public Sphere()
         {
             (_xCenter, _yCenter, _zCenter) = (0, 0, 0);
