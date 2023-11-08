@@ -32,19 +32,19 @@ namespace Lesson7
         public Sphere()
         {
             (_xCenter, _yCenter, _zCenter) = (0, 0, 0);
-            _radius = 1;
+            Radius = 1;
         }
 
         public Sphere(double radius)
         {
             (_xCenter, _yCenter, _zCenter) = (0, 0, 0);
-            _radius = radius;
+            Radius = radius;
         }
 
         public Sphere(double radius, double xCenter, double yCenter, double zCenter)
         {
             (_xCenter, _yCenter, _zCenter) = (xCenter, yCenter, zCenter);
-            _radius = radius;
+            Radius = radius;
         }
 
         public double GetVolume()
