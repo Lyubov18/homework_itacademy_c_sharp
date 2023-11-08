@@ -3,9 +3,13 @@
     internal class Car
     {
         private string _color;
+
         private string _type;
+
         private int _year;
+
         private bool _isStarted;
+
         public Car(string color, string type, int year)
         {
             _color = color;
@@ -13,18 +17,22 @@
             _year = year;
             _isStarted = false;
         }
+
         public string Color
         {
             set => _color = value;
         }
+
         public string Type
         {
             set => _type = value;
         }
+
         public int Year
         {
             set => _year = value;
         }
+
         public void Start()
         {
             if (!_isStarted)
@@ -37,6 +45,7 @@
                 Console.WriteLine("Невозможно завести. Автомобиль уже заведен");
             }
         }
+
         public void TurnOff()
         {
             if (_isStarted)
