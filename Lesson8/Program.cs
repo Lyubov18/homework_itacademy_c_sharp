@@ -4,6 +4,7 @@
     {
         static void Main(string[] args)
         {
+            //Проверка решения задачи 1
             Product product1 = new Product("name1", "shop1", 10.0);
             Product product2 = new Product("name2", "shop1", 5);
             Console.WriteLine(product1 + product2);
@@ -47,6 +48,24 @@
             {
                 product.ShowInfo();
             }
+
+            //Проверка решение задачи 2
+            Bus taxi = new Bus(70, 4);
+
+            Console.WriteLine($"{Environment.NewLine}Посадка пассажиров");
+            taxi.LoadingPassengers("Иванов");
+            taxi.LoadingPassengers(new List<string> { "Иванов2", "Иванова", "Иванов3", "Иванова2" });
+
+            taxi.IncreaseSpeed(60);
+            taxi.IncreaseSpeed(15);
+            taxi.ReduceSpeed(5);
+            taxi.ReduceSpeed(66);
+
+            Console.WriteLine($"{Environment.NewLine}Высадка пассажиров");
+            taxi.UnloadingPassengers("Петров");
+            taxi.UnloadingPassengers(new List<string> { "Иванов2", "Иванова" });
+
+            //Проверка задачи 3
         }
     }
 }
