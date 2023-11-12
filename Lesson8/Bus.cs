@@ -20,7 +20,7 @@
             {
                 return _maxSpeed;
             }
-            set
+            private set
             {
                 if (value >= 0)
                 {
@@ -39,7 +39,7 @@
             {
                 return _speed;
             }
-            set
+            private set
             {
                 if (value < 0)
                 {
@@ -64,7 +64,7 @@
             {
                 return _maxNumberOfPassengers;
             }
-            set
+            private set
             {
                 if (value > 0)
                 {

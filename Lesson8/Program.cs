@@ -66,6 +66,15 @@
             taxi.UnloadingPassengers(new List<string> { "Иванов2", "Иванова" });
 
             //Проверка задачи 3
+            Console.WriteLine($"{Environment.NewLine}");
+            Beelephant creature = new Beelephant(-100, 132);
+            Console.WriteLine($"Существо летает? - {creature.Fly()}");
+            Console.WriteLine($"Звук существа: {creature.Trumpet()}");
+            creature.Eat("milk", 10);
+            creature.Eat("nectar", 150);
+            creature.Eat("nectar", 60);
+            Console.WriteLine($"Существо летает? - {creature.Fly()}");
+            Console.WriteLine($"Звук существа: {creature.Trumpet()}");
         }
     }
 }
