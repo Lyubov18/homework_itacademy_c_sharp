@@ -2,24 +2,32 @@
 {
     public class Math
     {
-        public static void Add(double firstNumber, double secondNumber)
+        public static double Add(double firstNumber, double secondNumber)
         {
-            Console.WriteLine($"{firstNumber} + {secondNumber} = {firstNumber + secondNumber}");
+            return firstNumber + secondNumber;
         }
 
-        public static void Subtract(double firstNumber, double secondNumber)
+        public static double Subtract(double firstNumber, double secondNumber)
         {
-            Console.WriteLine($"{firstNumber} - {secondNumber} = {firstNumber - secondNumber}");
+            return firstNumber - secondNumber;
         }
 
-        public static void Multiply(double firstNumber, double secondNumber)
+        public static double Multiply(double firstNumber, double secondNumber)
         {
-            Console.WriteLine($"{firstNumber} * {secondNumber} = {firstNumber * secondNumber}");
+            return firstNumber * secondNumber;
         }
 
-        public static void Divide(double firstNumber, double secondNumber)
+        public static double Divide(double firstNumber, double secondNumber)
         {
-            Console.WriteLine($"{firstNumber} / {secondNumber} = {firstNumber / secondNumber}");
+            if (secondNumber == 0)
+            {
+                Console.WriteLine("Нельзя делить на ноль");
+                return firstNumber;
+            }
+            else
+            {
+                return firstNumber / secondNumber;
+            }
         }
     }
 }

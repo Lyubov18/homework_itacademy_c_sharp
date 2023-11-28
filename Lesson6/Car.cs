@@ -20,17 +20,45 @@
 
         public string Color
         {
-            set => _color = value;
+            set
+            {
+                if (String.IsNullOrWhiteSpace(value))
+                {
+                    Console.WriteLine($"Необходимо указать цвет автомобиля");
+                }
+                else
+                {
+                    _color = value;
+                }
+            }
         }
 
         public string Type
         {
-            set => _type = value;
+            set
+            {
+                if (String.IsNullOrWhiteSpace(value))
+                {
+                    Console.WriteLine($"Необходимо указать тип автомобиля");
+                }
+                else
+                {
+                    _type = value;
+                }
+            }
         }
 
         public int Year
         {
-            set => _year = value;
+            set
+            {
+                if (value < 1885)
+                {
+                    Console.WriteLine($"Автомобиль не может быть {value} года. Будет установлено значение 0.");
+                    value = 0;
+                }
+                _year = value;
+            }
         }
 
         public void Start()
