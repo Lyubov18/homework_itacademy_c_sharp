@@ -1,9 +1,9 @@
 ﻿namespace Lesson8
-{
+{    
     internal class Program
-    {
+    {        
         static void Main(string[] args)
-        {
+        {         
             //Проверка решения задачи 1
             Product product1 = new Product("name1", "shop1", 10.0);
             Product product2 = new Product("name2", "shop1", 5);
@@ -12,11 +12,11 @@
             product2.ShowInfo();
 
             Warehouse warehouse = new Warehouse();
-            Console.WriteLine($"Количество товаров в магазине: {warehouse.Products.Length}");
+            Console.WriteLine($"Количество товаров в магазине: {warehouse.Products.Count}");
 
             warehouse.AddProduct(product1);
             warehouse.AddProduct(product2);
-            Console.WriteLine($"Товаров в магазине: {warehouse.Products.Length}");
+            Console.WriteLine($"Товаров в магазине: {warehouse.Products.Count}");
             foreach (var product in warehouse.Products)
             {
                 product.ShowInfo();
@@ -36,14 +36,14 @@
             Console.WriteLine($"Удалили товар: ");
             product3.ShowInfo();
             warehouse.DeleteProduct(product3);
-            Console.WriteLine($"Товаров в магазине: {warehouse.Products.Length}");
+            Console.WriteLine($"Товаров в магазине: {warehouse.Products.Count}");
             foreach (var product in warehouse.Products)
             {
                 product.ShowInfo();
             }
             Console.WriteLine($"Удалили товар");
             warehouse.DeleteProduct(new Product("name1", "shop1", 10));
-            Console.WriteLine($"Товаров в магазине: {warehouse.Products.Length}");
+            Console.WriteLine($"Товаров в магазине: {warehouse.Products.Count}");
             foreach (var product in warehouse.Products)
             {
                 product.ShowInfo();

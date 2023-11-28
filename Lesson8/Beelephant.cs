@@ -2,8 +2,10 @@
 {
     internal class Beelephant
     {
-        private int _beeNumber;
+        private const string ElephantSound = "tu - tu - doo - doo";
+        private const string BeeSound = "wzzzz";
 
+        private int _beeNumber;
         private int _elephantNumber;
 
         public int BeeNumber
@@ -64,20 +66,18 @@
 
         public bool Fly()
         {
-            return !(_beeNumber < _elephantNumber);
+            return (_beeNumber >= _elephantNumber);
         }
 
         public string Trumpet()
-        {
-            string elephantSound = "tu - tu - doo - doo";
-            string beeSound = "wzzzz";
-            if (!(_beeNumber > _elephantNumber))
+        {           
+            if (_beeNumber <= _elephantNumber)
             {
-                return elephantSound;
+                return ElephantSound;
             }
             else
             {
-                return beeSound;
+                return BeeSound;
             }
         }
 

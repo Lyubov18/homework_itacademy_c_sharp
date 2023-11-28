@@ -3,13 +3,9 @@
     internal class Product
     {
         private string _name;
-
         private string _shopName;
-
         private double _price;
-
         private bool _isValid = true;
-
         public double Price
         {
             get

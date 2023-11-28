@@ -3,15 +3,10 @@
     internal class Bus
     {
         private double _speed;
-
         private double _maxSpeed;
-
         private int _maxNumberOfPassengers;
-
         private List<string> _passengersSurnames = new List<string>();
-
         private bool _hasEmpty;
-
         private Dictionary<int, string> _busSeats = new Dictionary<int, string>();
 
         public double MaxSpeed
@@ -152,6 +147,7 @@
                         {
                             _busSeats.Remove(seat.Key);
                             _hasEmpty = true;
+                            _passengersSurnames.Remove(unloadedSurname);
                             break;
                         }
                     }

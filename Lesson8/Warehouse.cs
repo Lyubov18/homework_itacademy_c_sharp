@@ -2,9 +2,9 @@
 {
     internal class Warehouse
     {
-        private Product[] _products = Array.Empty<Product>();
+        private List<Product> _products = new List<Product>();
 
-        public Product[] Products
+        public List<Product> Products
         {
             get
             {
@@ -16,15 +16,7 @@
         {
             if (product.IsValid)
             {
-                int oldQuantity = _products.Length;
-                Product[] newProducts = new Product[oldQuantity + 1];
-                for (int i = 0; i < oldQuantity; i++)
-                {
-                    newProducts[i] = _products[i];
-                }
-                newProducts[oldQuantity] = product;
-                _products = new Product[oldQuantity + 1];
-                _products = newProducts;
+                _products.Add(product);               
             }
             else
             {
@@ -34,25 +26,19 @@
 
         public void DeleteProduct(Product product)
         {
-            int quantity = _products.Length;
-            for (int i = 0; i < quantity; i++)
+            if (product.IsValid)
             {
-                if (_products[i].Equals(product))
-                {
-                    Product[] newProducts = new Product[quantity - 1];
-                    for (int j = 0; j < quantity - 1; j++)
-                    {
-                        newProducts[j] = j < i ? _products[j] : _products[j + 1];
-                    }
-                    _products = newProducts;
-                    break;
-                }
+                _products.Remove(product);
+            }
+            else
+            {
+                Console.WriteLine("Невозможно удалить товар");
             }
         }
 
         public void ShowProductInfoByIndex(int index)
         {
-            if (index >= 0 & index < _products.Length)
+            if (index >= 0 & index < _products.Count)
             {
                 _products[index].ShowInfo();
             }
