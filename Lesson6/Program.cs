@@ -11,10 +11,10 @@
             fanta.WriteTaste();
 
             Console.WriteLine($"{Environment.NewLine}Задача 2:");
-            Math.Add(2.1, 3.3);
-            Math.Subtract(6.3, 3.3);
-            Math.Multiply(6.3, 2);
-            Math.Divide(6.3, 2);
+            Console.WriteLine($"{Math.Add(2.1, 3.3)}");
+            Console.WriteLine($"{Math.Subtract(6.3, 3.3)}");
+            Console.WriteLine($"{Math.Multiply(6.3, 2)}");
+            Console.WriteLine($"{Math.Divide(6.3, 2)}");
 
             Console.WriteLine($"{Environment.NewLine}Задача 3:");
             Car firstCar = new Car("black", "kia", 2011);
