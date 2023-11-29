@@ -7,18 +7,18 @@
 
         public double Weight
         {
-            set 
+            set
             {
-                if (value <= 0) 
+                if (value <= 0)
                 {
                     Console.WriteLine("Некорректное значение веса транспортного средства");
                 }
-                else 
-                { 
+                else
+                {
                     _weight = value;
                 }
             }
-            get => _weight;          
+            get => _weight;
         }
 
         public double MaxSpeed
@@ -34,7 +34,7 @@
                     _maxSpeed = value;
                 }
             }
-            get => _maxSpeed;            
+            get => _maxSpeed;
         }
 
         virtual public void DisplayInfo()
