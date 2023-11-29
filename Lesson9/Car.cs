@@ -9,7 +9,7 @@
         {
             set
             {
-                if (value <= 0 || value > 10)
+                if (value < 0 || value > 10)
                 {
                     Console.WriteLine("Некорректное значение количесва дверей автомобиля");
                 }
@@ -18,6 +18,7 @@
                     _numberOfDoors = value;
                 }
             }
+            get => _numberOfDoors;
         }
         public string FuelType
         {
@@ -32,13 +33,14 @@
                     Console.WriteLine("Некорректное значение количесва дверей автомобиля");
                 }
             }
+            get => _fuelType;
         }
 
         public override void DisplayInfo()
         {
             base.DisplayInfo();
             Console.WriteLine($"Количество дверей в автомобиле: {_numberOfDoors}{Environment.NewLine}" +
-                              $"Тип топлива:{_fuelType}");
+                              $"Тип топлива:{_fuelType}{Environment.NewLine}");
         }
     }
 }

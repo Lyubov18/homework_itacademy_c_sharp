@@ -18,7 +18,9 @@
                     _weight = value;
                 }
             }
+            get => _weight;          
         }
+
         public double MaxSpeed
         {
             set
@@ -32,7 +34,9 @@
                     _maxSpeed = value;
                 }
             }
+            get => _maxSpeed;            
         }
+
         virtual public void DisplayInfo()
         {
             Console.WriteLine($"Вес странспортного средства: {_weight}{Environment.NewLine}" +

@@ -22,7 +22,7 @@
         public override void DisplayInfo()
         {
             base.DisplayInfo();
-            Console.WriteLine($"Грузоподъемность грузовика: {_carrying}");
+            Console.WriteLine($"Грузоподъемность грузовика: {_carrying}{Environment.NewLine}");
         }
     }
 }
