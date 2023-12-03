@@ -49,8 +49,6 @@
             Room1.ManageDevices();
             Room1.ManageDevices();
             Room1.ManageDevices();
-
-
         }
     }
 }
