@@ -1,16 +1,19 @@
 ﻿namespace Lesson9
 {
-    public interface IMultimediaDevice
+    public interface IMultimediaDevice <in T>
     {
-        public int VolumeLevel { get; set; }
-        public int State { get; set; }
-        public string ContentId { get; set; }
+        int VolumeLevel { get; set; }
+        string State { get; set; }
+        List<string>? ContentList { get; set; }
+        int ContentId { get; set; }
+        string Name { get; set; }
 
-        public void Play();
-        public void Stop();
-        public void Pause();
-        public void Next();
-        public void IncreaseVolume();
-        public void DecreaseVolume();
+        void Play();
+        void Stop();
+        void Pause();
+        void Next();
+        void IncreaseVolume();
+        void DecreaseVolume();
+        public void ManageDevice(T device);
     }
 }

@@ -2,7 +2,7 @@
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             //Проверка решения задачи 1
             Vehicle vVehicle = new Vehicle() { MaxSpeed = 40, Weight = 27 };
@@ -32,6 +32,24 @@
             eElectric.DisplayInfo();
 
             //Проверка решение задачи 2
+            IMultimediaDevice<MultimediaDevice> radio = new Radio() { ContentList = new List<string>() { "Станция 1", "Станция 2", "Станция 3" } };
+            radio.Play();
+            radio.ManageDevice((MultimediaDevice)radio);
+            IMultimediaDevice<MultimediaDevice> mp3 = new MP3Player() { ContentList = new List<string>() { "Песня 1", "Песня 2", "Песня 3" } };
+            mp3.Play();
+            mp3.ManageDevice((MultimediaDevice)mp3);
+            IMultimediaDevice<MultimediaDevice> dvd = new DVDPlayer() { ContentList = new List<string>() { "Видео 1", "Видео 2", "Видео 3" } };
+            dvd.Play();
+            dvd.ManageDevice((MultimediaDevice)dvd);
+            
+            MultimediaDevicePlayer Room1 = new MultimediaDevicePlayer();
+            Room1.AddDevice(mp3);
+            Room1.AddDevice(dvd);
+            Room1.AddDevice(radio);
+            Room1.ManageDevices();
+            Room1.ManageDevices();
+            Room1.ManageDevices();
+
 
         }
     }
