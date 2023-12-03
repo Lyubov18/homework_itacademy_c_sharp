@@ -41,7 +41,7 @@
             IMultimediaDevice<MultimediaDevice> dvd = new DVDPlayer() { ContentList = new List<string>() { "Видео 1", "Видео 2", "Видео 3" } };
             dvd.Play();
             dvd.ManageDevice((MultimediaDevice)dvd);
-            
+
             MultimediaDevicePlayer Room1 = new MultimediaDevicePlayer();
             Room1.AddDevice(mp3);
             Room1.AddDevice(dvd);

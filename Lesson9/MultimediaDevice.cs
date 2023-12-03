@@ -29,6 +29,7 @@ namespace Lesson9
                 }
             }
         }
+
         public string Name
         {
             get => _name;
@@ -40,7 +41,8 @@ namespace Lesson9
                 }
             }
         }
-        public string State 
+
+        public string State
         {
             get => _state;
             set
@@ -48,34 +50,36 @@ namespace Lesson9
                 if (!String.IsNullOrEmpty(value))
                 {
                     if (value == "Stopped" || value == "Paused" || value == "Playing")
-                    { 
+                    {
                         _state = value;
                     }
                 }
             }
         }
+
         public List<string>? ContentList
-        { 
+        {
             get => _contentList;
-            set 
+            set
             {
                 if (value == null || value.Count == 0)
                 {
                     State = "Stopped";
                 }
-                else 
+                else
                 {
                     _contentList = value;
                     ContentId = 1;
                 }
-            } 
+            }
         }
+
         public int ContentId
         {
             get => _contentId;
             set
             {
-                if ( ContentList == null)
+                if (ContentList == null)
                 {
                     State = "Stopped";
                 }
@@ -89,7 +93,7 @@ namespace Lesson9
                     _contentId = 1;
                     State = "Paused";
                 }
-                else 
+                else
                 {
                     _contentId = value;
                 }
@@ -98,8 +102,8 @@ namespace Lesson9
 
         public void DecreaseVolume()
         {
-           VolumeLevel -= 1;
-           Console.WriteLine($"Громкость уменьшена. Значение: {VolumeLevel}");
+            VolumeLevel -= 1;
+            Console.WriteLine($"Громкость уменьшена. Значение: {VolumeLevel}");
         }
 
         public void IncreaseVolume()
@@ -119,7 +123,7 @@ namespace Lesson9
             {
                 Console.WriteLine($"Контент: {ContentList[ContentId - 1]}{Environment.NewLine}" +
                                   $"Статус устройства: {State}");
-            }            
+            }
         }
 
         public void Pause()
@@ -128,7 +132,7 @@ namespace Lesson9
             {
                 State = "Paused";
                 Console.WriteLine($"Статус устройства: {State}");
-            }            
+            }
         }
 
         public void Play()
@@ -142,7 +146,7 @@ namespace Lesson9
                 State = "Playing";
                 Console.WriteLine($"Воспроизводится: {ContentList[ContentId - 1]}{Environment.NewLine}" +
                               $"Статус устройства: {State}");
-            }            
+            }
         }
 
         public void Stop()
@@ -151,7 +155,7 @@ namespace Lesson9
             {
                 State = "Stopped";
                 Console.WriteLine($"Статус устройства: {State}");
-            }            
+            }
         }
 
         public void ManageDevice(MultimediaDevice device)

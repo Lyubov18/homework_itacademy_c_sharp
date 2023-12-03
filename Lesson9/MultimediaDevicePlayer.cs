@@ -54,7 +54,7 @@ namespace Lesson9
                 {
                     if (n <= devicesNumber & n >= 1)
                     {
-                        _devices[n-1].ManageDevice((MultimediaDevice)_devices[n-1]);
+                        _devices[n - 1].ManageDevice((MultimediaDevice)_devices[n - 1]);
                     }
                     else
                     {

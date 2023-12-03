@@ -3,13 +3,13 @@
     public class DVDPlayer : MultimediaDevice, IMultimediaDevice<MultimediaDevice>
     {
         public DVDPlayer()
-        {   
+        {
             Name = "DVDPlayer";
         }
 
         public DVDPlayer(string name)
         {
-            { 
+            {
                 Name = name;
             }
         }

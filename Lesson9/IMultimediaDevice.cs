@@ -1,6 +1,6 @@
 ﻿namespace Lesson9
 {
-    public interface IMultimediaDevice <in T>
+    public interface IMultimediaDevice<in T>
     {
         int VolumeLevel { get; set; }
         string State { get; set; }
