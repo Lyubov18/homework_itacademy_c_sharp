@@ -46,7 +46,6 @@
             
             foreach (var item in _dishes)
             {   
-                if (item.GetType == ) { }
                 Console.WriteLine($"Наименование: {item.Name};     стоимость: {item.Price}");
             }
             Console.WriteLine($"Общая сумма заказа: {_fullPrice}");
