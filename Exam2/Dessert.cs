@@ -1,6 +1,6 @@
 ﻿namespace Exam2
 {
-    internal class Dessert : Dish
+    public class Dessert : Dish
     {
     }
 }

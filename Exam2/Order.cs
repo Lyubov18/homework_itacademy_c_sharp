@@ -28,7 +28,7 @@
             }
             set
             {
-                if (value.Count()>0)
+                if (value.Count() > 0)
                 {
                     _dishes = value;
                 }
@@ -36,16 +36,16 @@
         }
 
         public void AddDish(Dish dish)
-        { 
+        {
             _dishes.Add(dish);
             _fullPrice += dish.Price;
         }
 
         public void PrintOrder()
         {
-            
+
             foreach (var item in _dishes)
-            {   
+            {
                 Console.WriteLine($"Наименование: {item.Name};     стоимость: {item.Price}");
             }
             Console.WriteLine($"Общая сумма заказа: {_fullPrice}");

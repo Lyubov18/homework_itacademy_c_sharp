@@ -11,7 +11,7 @@
             {
                 return _name;
             }
-            set 
+            set
             {
                 if (!String.IsNullOrEmpty(value))
                 {
