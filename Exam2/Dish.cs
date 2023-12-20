@@ -34,5 +34,11 @@
                 }
             }
         }
+
+        public Dish(string name, decimal price) 
+        { 
+            Name = name;
+            Price = price;
+        }
     }
 }

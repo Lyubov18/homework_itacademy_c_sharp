@@ -43,10 +43,19 @@
 
         public void PrintOrder()
         {
-
+            bool hasDessert = false;
             foreach (var item in _dishes)
             {
+                if (item.GetType() == typeof(Dessert))
+                {
+                    hasDessert = true;
+                }
                 Console.WriteLine($"Наименование: {item.Name};     стоимость: {item.Price}");
+            }
+            if (hasDessert)
+            {
+                _fullPrice = _fullPrice * 0.9m;
+                Console.WriteLine($"Ваша скидка 10%");
             }
             Console.WriteLine($"Общая сумма заказа: {_fullPrice}");
         }
