@@ -43,7 +43,7 @@
 
         public void PrintOrder()
         {
-            bool hasDesert = false;
+            
             foreach (var item in _dishes)
             {   
                 if (item.GetType == ) { }
