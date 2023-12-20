@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-
-namespace Exam
+﻿namespace Exam
 {
     internal class Program
     {
